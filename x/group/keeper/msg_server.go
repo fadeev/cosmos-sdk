@@ -753,7 +753,6 @@ func (k Keeper) Exec(goCtx context.Context, req *group.MsgExec) (*group.MsgExecR
 		if err != nil {
 			return nil, err
 		}
-		_, err = k.doExecuteMsgs(ctx, k.router, proposal, addr)
 
 		results, err := k.doExecuteMsgs(cacheCtx, k.router, proposal, addr)
 		if err != nil {
