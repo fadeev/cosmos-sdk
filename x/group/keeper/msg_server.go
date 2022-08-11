@@ -747,7 +747,6 @@ func (k Keeper) Exec(goCtx context.Context, req *group.MsgExec) (*group.MsgExecR
 	var logs string
 	if proposal.Status == group.PROPOSAL_STATUS_ACCEPTED && proposal.ExecutorResult != group.PROPOSAL_EXECUTOR_RESULT_SUCCESS {
 		// Caching context so that we don't update the store in case of failure.
-		ctx, flush := ctx.CacheContext()
 		cacheCtx, flush := ctx.CacheContext()
 
 		addr, err := sdk.AccAddressFromBech32(policyInfo.Address)
